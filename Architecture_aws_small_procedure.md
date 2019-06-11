@@ -1,7 +1,5 @@
 # Summary of course on AWS 
 
-
-
 [TOC]
 
 ## What we have done
@@ -16,6 +14,7 @@
    1. ex : install R studio, jupiter...
 5. Elastic load balance (ELB)
 
+We explore a Scenario on AWS : https://docs.aws.amazon.com/fr_fr/vpc/latest/userguide/VPC_Scenario2.html
 
 
 **For the thirds points**, please refer to a tutorial repertory which explain this with more details.
