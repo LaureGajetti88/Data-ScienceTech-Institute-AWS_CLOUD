@@ -1,17 +1,16 @@
 # Overview of procedure
 
-**Contest :**
+**Context :**
 
-This document is being created. Thank you for your understanding
+This document is currently being created. Thank you for your understanding
 
 ## Prerequisites
 
-1. Create an account for AWS : https://signin.aws.amazon.com/
-2. Create a rosettabuh account : https://www.rosettahub.com/console/Logon.aspx#FederatedDashboard
+1. Create an account for AWS: https://signin.aws.amazon.com/
+2. Create a rosettahub account: https://www.rosettahub.com/console/Logon.aspx#FederatedDashboard
 
-
-
-For this tutorial, we use free option on aws services. But maybe you need to credit your account to create another instance.
+For this tutorial, we use the free tier of AWS services. 
+But it might require to credit your account to create another instance.
 
 ## How to create an instance
 
@@ -21,24 +20,24 @@ source : <https://docs.aws.amazon.com/fr_fr/vpc/latest/userguide/VPC_NAT_Instanc
 
 See the following diagram in the repertory.
 
-Explain steps : 
+Explain steps: 
 
-1. Sign in on rosettabuh :
-   1. Verify the area where you are, if it correspond at your needs, we choose EU(Ireland) for this tutorial
-   2. And click on the big yellow button on the left : "GO TO AWS Console". It will connect to AWS Management Console
+1. Sign in on rosettahub :
+   1. Verify the region you're in, if it corresponds to your needs, we choose EU(Ireland) for this tutorial
+   2. Click on the big yellow button on the left : "GO TO AWS Console". It will connect to AWS Management Console
 2. Write on tool search : EC2 or select it on services AWS 
-3. Then click on big blu button "Launch an instance"
+3. Then click on big blue button "Launch an instance"
 
 In the course we work with **Amazon Linux 2 AMI (HVM), SSD Volume Type** - ami-030dbca661d402413 (64 bits x86) / ami-08c5dd5d585629c8f (64 bits Arm) but you can choose another "AMI".
 
 An AMI is a template that contains the software configuration (eg, an operating system, an application server, and applications).
 
 4. Then, to do a free test choose : t2.micro (free in green) and click on "check and throw"
-   1. Click always next, just verify you are on default parameter
+   1. Click always next, just verify you've selected the default parameters
    2. for the final step :
       1. Create a new pair of keys
-      2. Or choose your keys if you have already key
-5.  "Launch and throw" : Felicitation, we created our first instance!
+      2. Or choose your keys if you have already a key
+5.  "Launch and throw" : Congratulations, we created our first instance!
 
 ## How to create a VPC
 
@@ -50,24 +49,22 @@ source : https://docs.aws.amazon.com/fr_fr/vpc/latest/userguide/VPC_Subnets.html
 See the following diagram in the repertory.
 
 Explain steps : 
-
-1. Sign in on rosettabuh :
-   1. Verify the area where you are, if it correspond at your needs, we choose EU(Ireland) for this tutorial
-   2. And click on the big yellow button on the left : "GO TO AWS Console". It will connect to AWS Management Console
-2. Write on tool search : VPC or in Networking and Content Delivery choose VPC
+1. Sign in on rosettahub :
+   1. Verify the region you're in, if it corresponds to your needs, we choose EU(Ireland) for this tutorial
+   2. Click on the big yellow button on the left : "GO TO AWS Console". It will connect to AWS Management Console
+2. Search on tool search : VPC or got to Networking and Content Delivery and select VPC
 3. Verify your chosse area. Specific VPC are not all available, you need to take care in function what you want to do.
 
 By defaut, you have 2 VPC existants by AWS and rosettaHub
 
-4. We can create our VPC, click on "create VPC" blu button in the header.
-
+4. We can create our VPC, click on "create VPC" blue button in the header.
 
 
 #### TO DO
 
 
 
-## How to create an security group
+## How to create a security group
 
 A security group acts as a virtual firewall for your instance to control incoming and outgoing traffic. When you launch an instance in a VPC, you can assign up to five security groups to the instance. Security groups act at the instance level, not at the subnet level. Therefore, each instance in a subnet of your VPC could be assigned to a different set of security groups. If you do not specify a particular group at launch, the instance is automatically assigned to the default security group for the VPC.
 For each security group, you add rules that control incoming traffic to instances and a separate set of rules that control outgoing traffic. This section describes the basics you need to know about security groups for your mail order and its rules.
