@@ -17,3 +17,5 @@ They are a lot of module, as part of the AWS module, we have guidelines in the f
 
 
 For the point 3, refer to the file : "Architecture_aws_small_procedure" in repertory : [LaureGajetti88](https://github.com/LaureGajetti88)/Data-ScienceTech-Institute-AWS_CLOUD/
+
+4. Add a Tutorial for how to install R Studio when you create an instance : see repertory tutorial 
