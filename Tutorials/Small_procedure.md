@@ -57,12 +57,13 @@ Explain steps :
 
 By defaut, you have 2 VPC existants by AWS and rosettaHub
 
-4. We can create our VPC, click on "create VPC" blue button in the header.
+4. We can create our VPC, click on "start the assistance VPC" blue button in the header. Then "Select"
+   4.1 : Give a name at your VPC
+   4.2 : Give a ipv4 : by default you have 10.0.0.4/24, but you can change like : 192.168.1.0/24
+   4.3 : choose a area available
+   4.4 : if you need or want, you can create a subnet public or private
 
-
-#### TO DO
-
-
+Click on create, it's finish.
 
 ## How to create a security group
 
@@ -72,4 +73,20 @@ You can define network ACLs using rules similar to your security groups to add a
 
 source : <https://docs.aws.amazon.com/fr_fr/vpc/latest/userguide/VPC_SecurityGroups.html>
 
-#### TO DO
+Go on service Security and security groupe :
+
+1. Click on "Create a security group" (blue button)
+2. Give :
+   2.1 : a name
+   2.2 : a description like "launch-wizard-1 created " name of corresponding instance
+   2.3 : Add the VPC on what you want to add security parameter
+   
+Then click on "create"
+
+After, you can add the "enter rules" : 
+1. Select your security group :
+2. Clik on "Action" and "Modify the rules"
+3. Now you can add the rules yous need by clicking on "add rules"
+   3.1 Select the type, then the corresponding variables
+   
+ Finish :)
