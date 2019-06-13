@@ -35,23 +35,28 @@ In the other document , we saw that could "Verify and launch" directly the insta
 
 ```
 #!/bin/bash
-#install R
-yum install -y R
+#Update the package manager
+#Yum in this case as it is ran on Amazon Linux
+sudo yum update -y
 
-#install RStudio-Server 1.0.153 (2017-07-20)
-wget https://download2.rstudio.org/rstudio-server-rhel-1.0.153-x86_64.rpm
-yum install -y --nogpgcheck rstudio-server-rhel-1.0.153-x86_64.rpm
-rm rstudio-server-rhel-1.0.153-x86_64.rpm
+#Install R
+sudo yum install -y R
 
-#install shiny and shiny-server (2017-08-25)
-R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
-wget https://download3.rstudio.org/centos5.9/x86_64/shiny-server-1.5.4.869-rh5-x86_64.rpm
-yum install -y --nogpgcheck shiny-server-1.5.4.869-rh5-x86_64.rpm
-rm shiny-server-1.5.4.869-rh5-x86_64.rpm
+#Install RStudio-Server
+#https://www.rstudio.com/products/rstudio/download-server/
+wget https://download2.rstudio.org/rstudio-server-rhel-1.1.383-x86_64.rpm
+sudo yum install -y --nogpgcheck rstudio-server-rhel-1.1.383-x86_64.rpm
+sudo rm rstudio-server-rhel-1.1.383-x86_64.rpm
+
+#Install shiny and shiny-server
+sudo R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+wget https://download3.rstudio.org/centos5.9/x86_64/shiny-server-1.5.5.872-rh5-x86_64.rpm
+sudo yum install -y --nogpgcheck shiny-server-1.5.5.872-rh5-x86_64.rpm
+sudo rm shiny-server-1.5.5.872-rh5-x86_64.rpm
 
 #add user(s)
-useradd username
-echo username:password | chpasswd 
+sudo useradd username
+echo username:password | sudo chpasswd
 ```
 
 Copy and past in the boxe, but before change the last sentence : echo username:password | chpasswd 
@@ -62,8 +67,10 @@ Then, click next step until step 6 of amazon: Configure the security group.
 
 Here you have to add rule because we need to connect on the serveur that we create to login on Rsutio serveur. (Remark : you can do this step after if you forget to do it at this step). So :
 
+Be careful to configure the Security Group. Hint, RServer uses the port 8787 and Shiny Server the port 3838.
 1. Click on "add rules" : choose "custom TCP" for type and add 8787 for port range
 2. Click on "add rules" : choose "custom TCP" for type and add 3838 for port range
+
 
 Remark, before step 6 AWS you can add a Tag for more clarity like "R studio serveur" for your instance.
 
@@ -78,7 +85,7 @@ Then, stop the instance (click right and stop), wait, restart it (why: it seems 
 Then it's ok! go on your instance, keep the ipv4, then go on google and past this ipv4 plus the port of serveur Rstudio like this :
 
 ```
-Your_ipv4:8787
+http://YOU_IPv4:3838/
 ```
 
 It's open the interface of Rstudio and you can login with the variable that we have insert in the script configuration.
